@@ -41,7 +41,7 @@ export default function Login() {
         }}
         onSubmit={async (values, { setSubmitting }) => {
           try {
-            router.replace("/main");
+            router.replace("/main/buy");
           } finally {
             setSubmitting(false);
           }

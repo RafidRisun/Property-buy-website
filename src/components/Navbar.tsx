@@ -8,15 +8,15 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const navItems = [
-    { name: "Buy", href: "/main" },
-    { name: "Rent", href: "/rent" },
-    { name: "Sell", href: "/sell" },
-    { name: "Agents", href: "/agents" },
-    { name: "Blogs", href: "/blogs" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "Buy", href: "/main/buy" },
+    { name: "Rent", href: "/main/rent" },
+    { name: "Sell", href: "/main/sell" },
+    { name: "Agents", href: "/main/agents" },
+    { name: "Blogs", href: "/main/blogs" },
+    { name: "Contact Us", href: "/main/contact" },
   ];
   return (
-    <nav className="w-full h-20 bg-white flex items-center justify-between px-20">
+    <nav className="sticky top-0 z-50 w-full h-20 bg-white flex items-center justify-between px-8">
       <WiztecLogo />
       <div className="flex items-center gap-6">
         {navItems.map((item) => (
@@ -41,7 +41,7 @@ export default function Navbar() {
         </Link>
         <Link
           href="/auth/login"
-          className="flex px-4 py-3 bg-theme-color rounded-full text-white font-general font-medium"
+          className="flex px-4 py-3 bg-theme-color rounded-full text-white font-general font-medium hover:bg-theme-color-focused"
         >
           Login Now
         </Link>
