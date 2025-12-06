@@ -12,6 +12,7 @@
 	--font-alexandria: var(--font-alexandria);
 	--font-clash-bold: var(--font-clash-bold);
 	--font-silka: var(--font-silka);
+	--font-blauer-semibold: var(--font-blauer-semibold);
 	--color-theme-color: #6c0443;
 	--color-theme-color-focused: #af006a;
 }
@@ -27,4 +28,16 @@ body {
 	background: var(--background);
 	color: var(--foreground);
 	font-family: var(--font-general), system-ui, sans-serif;
+}
+
+@keyframes RightToLeft {
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+.RightToLeft {
+	animation: RightToLeft 10s infinite linear;
 }

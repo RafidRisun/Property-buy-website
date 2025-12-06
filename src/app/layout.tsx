@@ -47,6 +47,12 @@ const silka = localFont({
 	display: 'swap',
 });
 
+const blauerSemiBold = localFont({
+	src: './fonts/Blauer-Nue-Semibold.otf',
+	variable: '--font-blauer-semibold',
+	display: 'swap',
+});
+
 export const metadata: Metadata = {
 	title: 'WiztecBD-task',
 	description: 'Please hire me please please',
@@ -60,7 +66,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${generalSans.variable} ${alexandria.variable} ${clashBold.variable} ${silka.variable} antialiased`}
+				className={`${generalSans.variable} ${alexandria.variable} ${clashBold.variable} ${silka.variable} ${blauerSemiBold.variable} antialiased`}
 			>
 				{children}
 			</body>
