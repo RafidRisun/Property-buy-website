@@ -4,28 +4,28 @@ export default function EmailBanner() {
       <div className="flex py-2 px-3 bg-[#1B1626] rounded-full font-silka text-white text-sm">
         BUILD FOR YOU
       </div>
-      <div className="flex flex-col w-145 gap-6 items-center justify-center">
-        <h1 className="font-clash-bold text-white/90 backdrop-blur-sm text-6xl text-center">
+      <div className="flex flex-col sm:w-145 gap-6 items-center justify-center">
+        <h1 className="font-clash-bold text-white/90 backdrop-blur-sm text-xl sm:text-6xl text-center">
           Built for Creators. <br />
           Powered for Profit
         </h1>
-        <p className="font-general text-white text-center text-md">
+        <p className="font-general text-white text-center text-xs sm:text-md">
           Create and sell courses, consulting services, and communities - with
           Zero marketing cost and a built-in sales network.
         </p>
       </div>
       <div className="flex flex-col items-center justify-center gap-2">
-        <div className="flex flex-row items-center justify-between bg-[#3B3B4B] p-1 rounded-full w-120">
+        <div className="flex flex-row items-center justify-between bg-[#3B3B4B] p-1 rounded-full w-60 sm:w-120">
           <input
             type="email"
             placeholder="Enter your email"
-            className="flex-grow bg-transparent outline-none border-none text-white px-4 m-2 placeholder-gray-400"
+            className="flex-grow bg-transparent outline-none border-none text-white text-xs sm:text-md px-2 sm:px-4 m-1 sm:m-2 placeholder-gray-400"
           />
-          <button className="bg-linear-to-r from-[#693FFF] to-[#C02EE5] text-white px-6 py-2 rounded-full ml-4 hover:from-[#8260FF] hover:to-[#D746FB] transition-colors cursor-pointer flex flex-col items-center justify-center">
-            <span className="text-sm font-general text-white">
+          <button className="bg-linear-to-r from-[#693FFF] to-[#C02EE5] text-white px-2 sm:px-6 py-1 sm:py-2 rounded-full sm:ml-4 hover:from-[#8260FF] hover:to-[#D746FB] transition-colors cursor-pointer flex flex-col items-center justify-center">
+            <span className="text-xs sm:text-sm font-general text-white">
               Start for Free
             </span>
-            <span className="text-xs font-general text-white">
+            <span className="hidden sm:block text-xs font-general text-white">
               No credit card required
             </span>
           </button>
@@ -44,7 +44,7 @@ export default function EmailBanner() {
               Open calculator
             </div>
           </div>
-          <div className="flex flex-row items-center gap-4 mt-4">
+          <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
             <div className="flex flex-col w-60 items-start gap-2 px-3 py-4 border border-gray-300/20 rounded-lg">
               <p className="font-silka text-xs text-white">
                 CO-SELLERS IN NETWORDK

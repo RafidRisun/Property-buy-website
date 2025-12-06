@@ -27,7 +27,7 @@ export default function Services() {
   return (
     <div className="flex flex-col py-20 gap-10 items-center justify-center">
       <div className="flex flex-col gap-6 bg-white items-center justify-center">
-        <h2 className="font-silka text-lg text-gray-700">
+        <h2 className="font-silka text-sm sm:text-lg text-gray-700">
           TRUSTED BY +10,000 CONSULTANTS & ORGANISATIONS
         </h2>
         <div className="overflow-hidden whitespace-nowrap bg-gray-100 py-6 w-full relative">
@@ -49,16 +49,16 @@ export default function Services() {
         </div>
       </div>
       <div className="w-full bg-linear-to-t from-[#F9C4FE]/0 via-[#F9C4FE]/50 to-[#F9C4FE]/0 flex flex-col gap-10 items-center justify-center mt-10">
-        <div className="flex py-2 px-3 bg-gradient-to-r from-[#FCC3FF] to-[#F75EFF] rounded-full font-silka font-semibold text-black text-sm">
+        <div className="flex py-2 px-3 bg-linear-to-r from-[#FCC3FF] to-[#F75EFF] rounded-full font-silka font-semibold text-black text-sm">
           DIVERSIFY REVENUES STREAM
         </div>
         <div className="flex flex-col w-210 gap-6 items-center justify-center">
-          <h1 className="font-clash-bold text-[#212121] text-6xl text-center">
-            Maximise earnings with limitless revenue streams.
+          <h1 className="font-clash-bold text-[#212121] text-xl sm:text-6xl text-center">
+            Maximise earnings <br /> with limitless revenue streams.
           </h1>
-          <p className="font-general text-[#212121] text-center text-xl">
-            Create and sell courses, consulting services, and communities - with
-            Zero marketing cost and a built-in sales network.
+          <p className="font-general text-[#212121] text-center text-sm sm:text-xl">
+            Create and sell courses, consulting services, and communities <br />
+            {""}- with Zero marketing cost and a built-in sales network.
           </p>
         </div>
         <div className="flex flex-row gap-2 items-center justify-center p-1 bg-white rounded-full">
@@ -73,7 +73,7 @@ export default function Services() {
             >
               <span dangerouslySetInnerHTML={{ __html: service.icon }} />
               <span
-                className={`font-general font-semibold mr-2 ${
+                className={`hidden sm:block font-general font-semibold mr-2 ${
                   selectedServiceId === service.id ? "text-white" : "text-black"
                 } text-center`}
               >
@@ -82,8 +82,8 @@ export default function Services() {
             </div>
           ))}
         </div>
-        <div className="flex flex-row bg-linear-to-r from-[#4C002D] to-[#4C002D]/50 w-xl sm:w-7xl  rounded-r-[100px] rounded-l-[300px] p-3">
-          <div className="w-1/2 flex flex-col gap-6 pl-25 py-20">
+        <div className="flex flex-row bg-linear-to-r from-[#4C002D] to-[#4C002D]/50 w-md sm:w-7xl  rounded-r-[100px] rounded-l-[300px] p-3">
+          <div className="w-full sm:w-1/2 flex flex-col gap-6 pl-25 py-20">
             <h2 className="font-blauer-semibold text-4xl text-white">
               Courses
             </h2>
@@ -102,7 +102,7 @@ export default function Services() {
               </button>
             </div>
           </div>
-          <div className="relative w-1/2 h-130 rounded-r-[100px] rounded-l-[300px] overflow-hidden">
+          <div className="hidden sm:block relative w-1/2 h-130 rounded-r-[100px] rounded-l-[300px] overflow-hidden">
             <Image
               src="/images/meeting.png"
               alt="Services Illustration"

@@ -20,11 +20,11 @@ export default function Reviews() {
         TESTIMONIALS
       </div>
       <div className="flex flex-col w-full max-w-6xl gap-6 items-center justify-center">
-        <h1 className="font-clash-bold text-white text-5xl text-center">
+        <h1 className="font-clash-bold text-white text-xl sm:text-5xl text-center">
           Trusted by Creators & Proven by Results.
         </h1>
         <p className="font-general text-white text-center text-lg">
-          See how others grow with Growhubs — real stories, real success.
+          See how others grow with Growhubs <br /> — real stories, real success.
         </p>
       </div>
 
