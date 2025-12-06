@@ -15,7 +15,7 @@ interface Review {
 export default function ReviewCard({ review }: { review: Review }) {
   return (
     <div className="flex flex-row gap-4 bg-white rounded-3xl mx-60 p-4">
-      <div className="w-2/5 relative rounded-2xl overflow-hidden aspect-[4/3]">
+      <div className="w-2/5 relative rounded-2xl overflow-hidden aspect-4/3">
         <Image
           src={review.imageUrl}
           alt="Reviewer Image"

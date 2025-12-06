@@ -14,33 +14,9 @@ import { iconStarEmpty, iconStarFull } from "@/public/icons/icon";
 import ReviewCard from "./ReviewCard";
 
 export default function Reviews() {
-  const swiperWrapperRef = useRef<HTMLDivElement>(null);
-
-  function adjustMargin() {
-    const screenWidth = window.innerWidth;
-    if (swiperWrapperRef.current) {
-      swiperWrapperRef.current.style.marginLeft =
-        screenWidth <= 520
-          ? "0px"
-          : screenWidth <= 650
-          ? "-50px"
-          : screenWidth <= 800
-          ? "-100px"
-          : "-150px";
-    }
-  }
-
-  useEffect(() => {
-    adjustMargin();
-    window.addEventListener("resize", adjustMargin);
-    return () => {
-      window.removeEventListener("resize", adjustMargin);
-    };
-  }, []);
-
   return (
-    <div className="flex flex-col w-full items-center justify-center gap-10 bg-linear-to-t from-[#3C4C5A]/83 to-[#2A0019] py-20">
-      <div className="flex py-2 px-3 bg-gradient-to-r from-[#FCC3FF] to-[#F75EFF] rounded-full font-silka font-semibold text-black text-sm">
+    <div className="flex flex-col py-20 w-full items-center justify-center gap-10 bg-linear-to-t from-[#3C4C5A]/83 to-[#2A0019]">
+      <div className="flex py-2 px-3 bg-linear-to-r from-[#FCC3FF] to-[#F75EFF] rounded-full font-silka font-semibold text-black text-sm">
         TESTIMONIALS
       </div>
       <div className="flex flex-col w-full max-w-6xl gap-6 items-center justify-center">
