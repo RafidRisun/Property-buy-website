@@ -62,3 +62,24 @@ export const iconMinimize = `<svg width="24" height="24" viewBox="0 0 24 24" fil
 <path d="M5.25 12H19.25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 `;
+
+export const iconDownArrow = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 10L12 15L17 10" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
+export const iconArea = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="15" height="15" stroke="black" stroke-dasharray="4 4"/>
+<path d="M12 12L4 4M4 4H10M4 4V10" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
+export const iconLeftArrow = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.8334 9.99996H4.16669M4.16669 9.99996L10 15.8333M4.16669 9.99996L10 4.16663" stroke="black" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+
+export const iconRightArrow = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.16666 9.99996H15.8333M15.8333 9.99996L9.99999 4.16663M15.8333 9.99996L9.99999 15.8333" stroke="black" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
