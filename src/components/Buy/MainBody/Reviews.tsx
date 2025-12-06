@@ -1,28 +1,41 @@
 'use client';
 
 import Image from 'next/image';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
 
-const responsive = {
-	desktop: {
-		breakpoint: { max: 3000, min: 1024 },
-		items: 3,
-		slidesToSlide: 1,
-	},
-	tablet: {
-		breakpoint: { max: 1024, min: 464 },
-		items: 2,
-		slidesToSlide: 1,
-	},
-	mobile: {
-		breakpoint: { max: 464, min: 0 },
-		items: 1,
-		slidesToSlide: 1,
-	},
-};
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 
-export default function Reviews({ deviceType }: { deviceType?: string } = {}) {
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { useEffect, useRef } from 'react';
+
+export default function Reviews() {
+	const swiperWrapperRef = useRef<HTMLDivElement>(null);
+
+	function adjustMargin() {
+		const screenWidth = window.innerWidth;
+		if (swiperWrapperRef.current) {
+			swiperWrapperRef.current.style.marginLeft =
+				screenWidth <= 520
+					? '0px'
+					: screenWidth <= 650
+					? '-50px'
+					: screenWidth <= 800
+					? '-100px'
+					: '-150px';
+		}
+	}
+
+	useEffect(() => {
+		adjustMargin();
+		window.addEventListener('resize', adjustMargin);
+		return () => {
+			window.removeEventListener('resize', adjustMargin);
+		};
+	}, []);
+
 	return (
 		<div className="flex flex-col w-full items-center justify-center gap-10 bg-linear-to-t from-[#3C4C5A]/83 to-[#2A0019] py-20">
 			<div className="flex py-2 px-3 bg-gradient-to-r from-[#FCC3FF] to-[#F75EFF] rounded-full font-silka font-semibold text-black text-sm">
@@ -37,68 +50,62 @@ export default function Reviews({ deviceType }: { deviceType?: string } = {}) {
 				</p>
 			</div>
 
-			<div className="w-full">
-				<Carousel
-					swipeable={true}
-					draggable={true}
-					showDots={false}
-					arrows={false}
-					responsive={responsive}
-					ssr={false}
-					infinite={true}
-					autoPlay={true}
-					autoPlaySpeed={3000}
-					keyBoardControl={true}
-					customTransition="all .5"
-					transitionDuration={500}
-					containerClass="carousel-container px-4"
-					removeArrowOnDeviceType={['tablet', 'mobile']}
-					deviceType={deviceType}
-					dotListClass="custom-dot-list-style mt-4"
-					itemClass="carousel-item-padding-40-px"
+			<div className="w-full flex flex-row items-center justify-center">
+				<Swiper
+					// install Swiper modules
+					modules={[Pagination]}
+					grabCursor
+					initialSlide={2}
+					centeredSlides
+					slidesPerView={'auto'}
+					speed={800}
+					slideToClickedSlide
+					pagination={{ clickable: true }}
+					className="w-full px-10"
+					breakpoints={{
+						320: { spaceBetween: 40 },
+						650: { spaceBetween: 30 },
+						1000: { spaceBetween: 20 },
+					}}
 				>
 					{reviews.map(review => (
-						<div
-							key={review.id}
-							className="bg-white rounded-lg p-6 shadow-md h-full flex flex-col mx-4"
-						>
-							<div className="flex items-center gap-4 mb-4">
-								<Image
-									src={review.imageUrl}
-									alt={review.name}
-									width={60}
-									height={60}
-									className="rounded-full"
-								/>
-								<div>
-									<h3 className="font-blauer-semibold text-lg text-black">
-										{review.name}
-									</h3>
-									<p className="font-general text-gray-600 text-sm">
-										{review.designation}
-									</p>
+						<SwiperSlide key={review.id} className="">
+							<div className="flex flex-row bg-white rounded-xl h-130 p-2">
+								<div className="w-2/5 h-full relative rounded-lg overflow-hidden">
+									<Image
+										src={review.imageUrl}
+										alt="Reviewer Image"
+										fill
+										className="object-cover"
+									/>
+								</div>
+								<div className="flex-1 h-full flex flex-col">
+									<div className="flex flex-row items-center justify-between w-full px-4 py-2">
+										<div className="flex flex-row gap-2">
+											<div className="relative rounded-full w-16 h-16">
+												<Image
+													src={review.imageUrl}
+													alt="Reviewer Image"
+													fill
+													className="object-cover rounded-full"
+												/>
+											</div>
+											<div className="flex flex-col gap-2">
+												<h2 className="font-clash-semibold text-xl">
+													{review.name}
+												</h2>
+												<p className="font-general text-gray-600">
+													{review.designation}
+												</p>
+											</div>
+										</div>
+										<span>Stars</span>
+									</div>
 								</div>
 							</div>
-							<p className="font-general text-gray-800 text-sm flex-grow">
-								{review.review}
-							</p>
-							<div className="flex flex-row gap-2 flex-wrap mt-4">
-								{review.tags.map((tag, i) => (
-									<span
-										key={i}
-										className="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full"
-									>
-										{tag}
-									</span>
-								))}
-							</div>
-							<div className="flex flex-row justify-between text-sm text-gray-600 mt-4">
-								<span>Earned: {review.earned}</span>
-								<span>Location: {review.location}</span>
-							</div>
-						</div>
+						</SwiperSlide>
 					))}
-				</Carousel>
+				</Swiper>
 			</div>
 		</div>
 	);
