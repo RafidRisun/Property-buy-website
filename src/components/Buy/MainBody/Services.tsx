@@ -30,13 +30,13 @@ export default function Services() {
         <h2 className="font-silka text-sm sm:text-lg text-gray-700">
           TRUSTED BY +10,000 CONSULTANTS & ORGANISATIONS
         </h2>
-        <div className="overflow-hidden whitespace-nowrap bg-gray-100 py-6 w-full relative">
+        <div className="overflow-hidden whitespace-nowrap bg-gray-100 py-6 w-100 sm:w-full relative">
           <div className="absolute left-0 top-0 h-full w-100 bg-linear-to-r from-white to-transparent z-10"></div>
           <div className="absolute right-0 top-0 h-full w-100 bg-linear-to-l from-white to-transparent z-10"></div>
           <div className="flex infinite-scroll gap-10 items-center">
             {/* 1st copy */}
             {[...clients, ...clients].map((client, index) => (
-              <div key={index} className="mx-4 flex-shrink-0">
+              <div key={index} className="mx-4 shrink-0">
                 <Image
                   src={client.logo}
                   alt={client.name}

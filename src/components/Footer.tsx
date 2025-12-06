@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col gap-4">
           <h3 className="font-general font-medium text-lg">Follow Us</h3>
-          <div className="flex flex-row items-center justify-center gap-4">
+          <div className="flex flex-row flex-wrap items-center justify-center gap-4">
             <Link href="https://www.facebook.com">
               <span dangerouslySetInnerHTML={{ __html: iconFacebook }} />
             </Link>

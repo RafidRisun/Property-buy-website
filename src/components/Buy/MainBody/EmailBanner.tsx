@@ -19,7 +19,7 @@ export default function EmailBanner() {
           <input
             type="email"
             placeholder="Enter your email"
-            className="flex-grow bg-transparent outline-none border-none text-white text-xs sm:text-md px-2 sm:px-4 m-1 sm:m-2 placeholder-gray-400"
+            className="grow bg-transparent outline-none border-none text-white text-xs sm:text-md px-2 sm:px-4 m-1 sm:m-2 placeholder-gray-400"
           />
           <button className="bg-linear-to-r from-[#693FFF] to-[#C02EE5] text-white px-2 sm:px-6 py-1 sm:py-2 rounded-full sm:ml-4 hover:from-[#8260FF] hover:to-[#D746FB] transition-colors cursor-pointer flex flex-col items-center justify-center">
             <span className="text-xs sm:text-sm font-general text-white">
@@ -90,7 +90,7 @@ export default function EmailBanner() {
           </div>
         </div>
         {/* Carousel */}
-        <div className="w-full h-10 bg-[#FFF3D8] flex items-center overflow-hidden mt-4">
+        <div className="w-100 sm:w-full h-10 bg-[#FFF3D8] flex items-center overflow-hidden mt-4">
           <div className="scroll whitespace-nowrap mx-8">
             <div className="infinite-scroll flex gap-8">
               <p className="text-sm font-silka font-medium text-gray-700 mb-0 leading-10">
