@@ -59,7 +59,7 @@ export default function Navbar() {
         <div className="w-6 h-0.5 bg-gray-600"></div>
       </button>
       {isMenuOpen && (
-        <div className="absolute top-20 left-0 w-full bg-white border-t border-gray-200 flex flex-col items-center sm:hidden">
+        <div className="absolute top-20 left-0 w-full bg-white border-t border-gray-200 flex flex-col gap-2 items-center sm:hidden">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -71,6 +71,19 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
+          <Link
+            href="/favorites"
+            className="flex items-center gap-2 text-gray-600 font-general font-medium"
+          >
+            <span dangerouslySetInnerHTML={{ __html: iconFavorite }} />
+            <span>Favorites</span>
+          </Link>
+          <Link
+            href="/auth/login"
+            className="flex px-4 py-3 bg-theme-color rounded-full text-white font-general font-medium hover:bg-theme-color-focused"
+          >
+            Login Now
+          </Link>
         </div>
       )}
     </nav>
