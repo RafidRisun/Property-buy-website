@@ -82,7 +82,7 @@ export default function Services() {
             </div>
           ))}
         </div>
-        <div className="flex flex-row bg-linear-to-r from-[#4C002D] to-[#4C002D]/50 w-320  rounded-r-[100px] rounded-l-[300px] p-3">
+        <div className="flex flex-row bg-linear-to-r from-[#4C002D] to-[#4C002D]/50 w-xl sm:w-7xl  rounded-r-[100px] rounded-l-[300px] p-3">
           <div className="w-1/2 flex flex-col gap-6 pl-25 py-20">
             <h2 className="font-blauer-semibold text-4xl text-white">
               Courses

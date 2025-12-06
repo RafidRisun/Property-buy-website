@@ -51,7 +51,7 @@ export default function Buy() {
     <div className="w-full min-h-screen flex flex-col pt-10">
       <div className="grid grid-cols-12 w-full gap-6 pb-20 lg:px-30 xl:px-40">
         {/*sidebar*/}
-        <aside className="col-span-3 gap-4 flex flex-col">
+        <aside className="col-span-3 gap-4 flex-col hidden sm:flex">
           {/*Reset*/}
           <div className="flex flex-row p-2 items-center justify-between border border-gray-200 rounded-xl">
             <p className="text-black font-general text-lg font-medium ml-2">
@@ -84,7 +84,7 @@ export default function Buy() {
         </aside>
         <div className=" col-span-9 flex flex-col gap-4">
           <SortBy results={results} />
-          <div className="w-full grid grid-cols-2 gap-4">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
             {paginatedProperties.map((property) => (
               <ProductCard key={property.id} property={property} />
             ))}

@@ -20,7 +20,7 @@ export default function AuthLayout({
         </div>
       </div>
 
-      <div className="w-180 relative">
+      <div className="hidden lg:block w-180 relative">
         <Image
           src="/images/authPhoto.png"
           alt="Authentication Illustration"

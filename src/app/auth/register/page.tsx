@@ -8,7 +8,7 @@ import { iconMailPhone } from "@/public/icons/icon";
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
   return (
-    <div className="flex flex-col items-center justify-center gap-4 w-full">
+    <div className="flex flex-col items-center justify-center gap-4  w-90 sm:w-full">
       <div className="flex flex-col items-center justify-center gap-2">
         <p className="font-general text-black text-3xl font-semibold">
           Create New Account

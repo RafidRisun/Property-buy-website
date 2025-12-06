@@ -11,7 +11,7 @@ export default function Login() {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4 w-full">
+    <div className="flex flex-col items-center justify-center gap-4 w-90 sm:w-full">
       <div className="flex flex-col items-center justify-center gap-2">
         <p className="font-general text-black text-3xl font-semibold">
           Welcome Back
