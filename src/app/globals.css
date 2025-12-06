@@ -10,6 +10,8 @@
 	--color-foreground: var(--foreground);
 	--font-general: var(--font-general-sans);
 	--font-alexandria: var(--font-alexandria);
+	--font-clash-bold: var(--font-clash-bold);
+	--font-silka: var(--font-silka);
 	--color-theme-color: #6c0443;
 	--color-theme-color-focused: #af006a;
 }
