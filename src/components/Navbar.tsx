@@ -20,7 +20,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 w-full h-20 bg-white flex items-center justify-between  lg:px-38 xl:px-48">
+    <nav className="sticky top-0 z-50 w-full h-20 bg-white flex items-center justify-between px-4 sm:px-0  lg:px-38 xl:px-48">
       <WiztecLogo />
       <div className="hidden sm:flex items-center gap-6">
         {navItems.map((item) => (

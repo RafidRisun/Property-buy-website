@@ -47,42 +47,89 @@ export default function Buy() {
     currentPage * productsPerPage
   );
 
+  const [filtersExpanded, setFiltersExpanded] = useState(false);
+
   return (
     <div className="w-full min-h-screen flex flex-col pt-10">
-      <div className="grid grid-cols-12 w-full gap-6 pb-20 lg:px-30 xl:px-40">
+      <div className="flex flex-col sm:grid sm:grid-cols-12 w-full gap-6 pb-20 lg:px-30 xl:px-40">
         {/*sidebar*/}
-        <aside className="col-span-3 gap-4 flex-col hidden sm:flex">
+        <aside className="col-span-3 gap-4 flex-col flex p-4 sm:p-0">
           {/*Reset*/}
-          <div className="flex flex-row p-2 items-center justify-between border border-gray-200 rounded-xl">
+          <div className="flex sm:hidden flex-row p-2 items-center justify-between border border-gray-200 rounded-xl">
             <p className="text-black font-general text-lg font-medium ml-2">
-              Property Preferences
+              Filters
             </p>
             <button
               className="flex flex-row items-center gap-2 text-gray-800 font-general font-medium p-3 bg-gray-100 rounded-lg hover:bg-gray-200 cursor-pointer"
-              onClick={resetFilter}
+              onClick={() => setFiltersExpanded((prev) => !prev)}
             >
-              <span>Reset Filter</span>
-              <span dangerouslySetInnerHTML={{ __html: iconResetFilter }} />
+              <span>{filtersExpanded ? "Hide Filters" : "Show Filters"}</span>
             </button>
           </div>
-          <BudgetRange
-            budgetRange={budgetRange}
-            setBudgetRange={setBudgetRange}
-          />
-          <Suburbs
-            selectedSuburbs={selectedSuburbs}
-            setSelectedSuburbs={setSelectedSuburbs}
-          />
-          <PropertyType
-            selectedPropertyTypes={selectedPropertyTypes}
-            setSelectedPropertyTypes={setSelectedPropertyTypes}
-          />
-          <Amenities
-            selectedAmenities={selectedAmenities}
-            setSelectedAmenities={setSelectedAmenities}
-          />
+          <div className="hidden sm:flex flex-col gap-4">
+            <div className="flex flex-row p-2 items-center justify-between border border-gray-200 rounded-xl">
+              <p className="text-black font-general text-lg font-medium ml-2">
+                Property Preferences
+              </p>
+              <button
+                className="flex flex-row items-center gap-2 text-gray-800 font-general font-medium p-3 bg-gray-100 rounded-lg hover:bg-gray-200 cursor-pointer"
+                onClick={resetFilter}
+              >
+                <span>Reset Filter</span>
+                <span dangerouslySetInnerHTML={{ __html: iconResetFilter }} />
+              </button>
+            </div>
+            <BudgetRange
+              budgetRange={budgetRange}
+              setBudgetRange={setBudgetRange}
+            />
+            <Suburbs
+              selectedSuburbs={selectedSuburbs}
+              setSelectedSuburbs={setSelectedSuburbs}
+            />
+            <PropertyType
+              selectedPropertyTypes={selectedPropertyTypes}
+              setSelectedPropertyTypes={setSelectedPropertyTypes}
+            />
+            <Amenities
+              selectedAmenities={selectedAmenities}
+              setSelectedAmenities={setSelectedAmenities}
+            />
+          </div>
+          {filtersExpanded && (
+            <div className="flex sm:hidden flex-col gap-4">
+              <div className="flex flex-row p-2 items-center justify-between border border-gray-200 rounded-xl">
+                <p className="text-black font-general text-lg font-medium ml-2">
+                  Property Preferences
+                </p>
+                <button
+                  className="flex flex-row items-center gap-2 text-gray-800 font-general font-medium p-3 bg-gray-100 rounded-lg hover:bg-gray-200 cursor-pointer"
+                  onClick={resetFilter}
+                >
+                  <span>Reset Filter</span>
+                  <span dangerouslySetInnerHTML={{ __html: iconResetFilter }} />
+                </button>
+              </div>
+              <BudgetRange
+                budgetRange={budgetRange}
+                setBudgetRange={setBudgetRange}
+              />
+              <Suburbs
+                selectedSuburbs={selectedSuburbs}
+                setSelectedSuburbs={setSelectedSuburbs}
+              />
+              <PropertyType
+                selectedPropertyTypes={selectedPropertyTypes}
+                setSelectedPropertyTypes={setSelectedPropertyTypes}
+              />
+              <Amenities
+                selectedAmenities={selectedAmenities}
+                setSelectedAmenities={setSelectedAmenities}
+              />
+            </div>
+          )}
         </aside>
-        <div className=" col-span-9 flex flex-col gap-4">
+        <div className="col-span-9 flex flex-col gap-4 p-4 sm:p-0">
           <SortBy results={results} />
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
             {paginatedProperties.map((property) => (
