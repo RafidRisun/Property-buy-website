@@ -48,7 +48,7 @@ export default function Buy() {
   );
 
   return (
-    <div className="w-full min-h-screen flex flex-col py-10">
+    <div className="w-full min-h-screen flex flex-col pt-10">
       <div className="grid grid-cols-12 w-full gap-6 pb-20 lg:px-30 xl:px-40">
         {/*sidebar*/}
         <aside className="col-span-3 gap-4 flex flex-col">

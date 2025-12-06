@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="flex flex-col bg-linear-to-t from-[#42233A] to-[#251621] w-full">
+    <div className="flex flex-col bg-linear-to-t from-[#42233A] to-[#251621] w-full rounded-t-3xl">
       <div className="flex flex-row items-start justify-between p-12 text-white">
         <div className="flex flex-col gap-4">
           <h3 className="font-general font-medium text-lg">About Us</h3>
