@@ -17,6 +17,8 @@ import { Property } from '../../types/Property';
 import ProductCard from '@/src/components/Buy/MainBody/ProductCard';
 import Pagination from '@/src/components/Buy/MainBody/Pagination';
 import EmailBanner from '@/src/components/Buy/MainBody/EmailBanner';
+import Services from '@/src/components/Buy/MainBody/Services';
+import Reviews from '@/src/components/Buy/MainBody/Reviews';
 
 export default function Buy() {
 	const [budgetRange, setBudgetRange] = useState<[number, number]>([
@@ -94,6 +96,8 @@ export default function Buy() {
 				</div>
 			</div>
 			<EmailBanner />
+			<Services />
+			<Reviews />
 		</div>
 	);
 }

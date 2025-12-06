@@ -92,7 +92,7 @@ export default function EmailBanner() {
 				{/* Carousel */}
 				<div className="w-full h-10 bg-[#FFF3D8] flex items-center overflow-hidden mt-4">
 					<div className="scroll whitespace-nowrap mx-8">
-						<div className="RightToLeft flex gap-8">
+						<div className="infinite-scroll flex gap-8">
 							<p className="text-sm font-silka font-medium text-gray-700 mb-0 leading-10">
 								Unlike Kajabi, Teachable, or Skool, Growhubs helps you find and
 								convert clients inside the platform so you can sell from day one
