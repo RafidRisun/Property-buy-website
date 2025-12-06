@@ -1,44 +1,44 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
 @theme inline {
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--font-general: var(--font-general-sans);
-	--font-alexandria: var(--font-alexandria);
-	--font-clash-bold: var(--font-clash-bold);
-	--font-silka: var(--font-silka);
-	--font-blauer-semibold: var(--font-blauer-semibold);
-	--color-theme-color: #6c0443;
-	--color-theme-color-focused: #af006a;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-general: var(--font-general-sans);
+  --font-alexandria: var(--font-alexandria);
+  --font-clash-bold: var(--font-clash-bold);
+  --font-silka: var(--font-silka);
+  --font-blauer-semibold: var(--font-blauer-semibold);
+  --color-theme-color: #6c0443;
+  --color-theme-color-focused: #af006a;
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
 }
 
 body {
-	background: var(--background);
-	color: var(--foreground);
-	font-family: var(--font-general), system-ui, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-general), system-ui, sans-serif;
 }
 
 @keyframes infinite-scroll {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(calc(-50% - 20px));
-	}
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 20px));
+  }
 }
 
 .infinite-scroll {
-	animation: infinite-scroll 10s linear infinite;
+  animation: infinite-scroll 10s linear infinite;
 }
